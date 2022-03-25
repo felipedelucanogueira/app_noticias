@@ -1,8 +1,8 @@
-import 'package:app_noticias/news_screens/allnews_screen.dart';
-import 'package:app_noticias/news_screens/business_screen.dart';
-import 'package:app_noticias/news_screens/health_screen.dart';
-import 'package:app_noticias/news_screens/sports_screen.dart';
 import 'package:flutter/material.dart';
+import '../news_screens/allnews_screen.dart';
+import '../news_screens/business_screen.dart';
+import '../news_screens/health_screen.dart';
+import '../news_screens/sports_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

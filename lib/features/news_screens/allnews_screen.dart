@@ -1,5 +1,6 @@
-import 'package:app_noticias/components/news_card.dart';
 import 'package:flutter/material.dart';
+
+import '../components/news_card.dart';
 
 class AllNewsScreen extends StatefulWidget {
   const AllNewsScreen({Key? key}) : super(key: key);
