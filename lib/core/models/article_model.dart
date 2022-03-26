@@ -27,4 +27,9 @@ class ArticleModel {
       source: SourceModel.fromJson(json['source']),
     );
   }
+
+  @override
+  String toString() {
+    return 'ArticleModel(title: $title, author: $author, content: $content, urlToImage: $urlToImage, description: $description, source: $source)';
+  }
 }

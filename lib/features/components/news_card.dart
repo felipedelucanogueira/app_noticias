@@ -46,7 +46,7 @@ class _NewsCardState extends State<NewsCard> {
                     FittedBox(
                       child: SizedBox(
                         height: 55,
-                        width: 150,
+                        width: 145,
                         child: Text(
                           widget.title,
                           style: const TextStyle(
@@ -59,7 +59,7 @@ class _NewsCardState extends State<NewsCard> {
                     FittedBox(
                       child: SizedBox(
                         height: 100,
-                        width: 176,
+                        width: 170,
                         child: Text(
                           widget.content,
                           style: const TextStyle(
