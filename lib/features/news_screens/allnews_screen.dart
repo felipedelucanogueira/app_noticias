@@ -1,9 +1,11 @@
+import 'package:app_noticias/core/models/article_model.dart';
 import 'package:flutter/material.dart';
 
 import '../components/news_card.dart';
 
 class AllNewsScreen extends StatefulWidget {
-  const AllNewsScreen({Key? key}) : super(key: key);
+  final List<ArticleModel> articleList;
+  const AllNewsScreen({Key? key, required this.articleList}) : super(key: key);
 
   @override
   State<AllNewsScreen> createState() => _AllNewsScreenState();
@@ -26,11 +28,14 @@ class _AllNewsScreenState extends State<AllNewsScreen> {
           ),
           Expanded(
             child: ListView.separated(
+              itemCount: widget.articleList.length,
               itemBuilder: (context, index) {
+                final article = widget.articleList[index];
+
                 return NewsCard(
-                  title: 'Nubank teste titulo flutter',
-                  content: 'texto de Conteudo teste ',
-                  imageUrl: 'https://source.unsplash.com/random',
+                  title: article.title,
+                  content: article.content,
+                  imageUrl: article.urlToImage,
                   onTap: () {},
                 );
               },
@@ -39,7 +44,6 @@ class _AllNewsScreenState extends State<AllNewsScreen> {
                   height: 30,
                 );
               },
-              itemCount: 5,
             ),
           )
         ],

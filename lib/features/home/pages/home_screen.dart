@@ -31,20 +31,14 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  var screens = [
-    const AllNewsScreen(),
-    const BusinessScreen(),
-    const SportsScreen(),
-    const HealthScreen()
-  ];
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: screens.length,
+      length: 4,
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          centerTitle: true,
           toolbarHeight: 60,
           bottom: TabBar(
             indicatorSize: TabBarIndicatorSize.label,
@@ -87,7 +81,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: CircularProgressIndicator(),
               );
             }
-            return screens[_selectedIndex];
+
+            if (state is HomeBlocSuccess) {
+              final screens = <Widget>[
+                AllNewsScreen(articleList: state.articleList),
+                const BusinessScreen(),
+                const SportsScreen(),
+                const HealthScreen()
+              ];
+              return screens[_selectedIndex];
+            }
+            return Container(color: Colors.red);
           },
         ),
       ),

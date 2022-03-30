@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:app_noticias/core/models/article_model.dart';
 import 'package:http/http.dart' as http;
 
+enum Coin { BRL, USD, GBL }
+
 class ApiNews {
   final _path =
       'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=23c30098b82a42828f2036b9fe9e0ec3';

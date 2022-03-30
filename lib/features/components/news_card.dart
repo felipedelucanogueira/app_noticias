@@ -6,11 +6,13 @@ class NewsCard extends StatefulWidget {
   final String content;
   final VoidCallback onTap;
 
-  const NewsCard(
-      {required this.imageUrl,
-      required this.title,
-      required this.content,
-      required this.onTap});
+  const NewsCard({
+    Key? key,
+    required this.imageUrl,
+    required this.title,
+    required this.content,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
   State<NewsCard> createState() => _NewsCardState();
